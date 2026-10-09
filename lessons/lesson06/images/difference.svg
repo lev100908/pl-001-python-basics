@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" width="480" height="310"
+     font-family="'Segoe UI', Arial, sans-serif">
+  <title>Разность: A − B</title>
+  <defs>
+    <clipPath id="clipA"><circle cx="190" cy="150" r="100"/></clipPath>
+  </defs>
+  <rect width="480" height="310" fill="#FFFFFF"/>
+  <circle cx="190" cy="150" r="100" fill="#9CC5EE"/>
+  <circle cx="290" cy="150" r="100" fill="#FFFFFF"/>
+  <circle cx="190" cy="150" r="100" fill="none" stroke="#000000" stroke-width="2.5"/>
+  <circle cx="290" cy="150" r="100" fill="none" stroke="#000000" stroke-width="2.5"/>
+  <g font-size="22" font-weight="600" fill="#12305A">
+    <text x="115" y="48" text-anchor="middle">A</text>
+    <text x="365" y="48" text-anchor="middle">B</text>
+  </g>
+  <g font-size="20" fill="#12305A">
+  <text x="135" y="150" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="160" y="115" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="160" y="185" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="240" y="128" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="240" y="178" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="335" y="125" text-anchor="middle" dominant-baseline="central">6</text>
+  <text x="345" y="175" text-anchor="middle" dominant-baseline="central">7</text>
+  </g>
+  <text x="240" y="285" text-anchor="middle" font-size="22" font-weight="600" fill="#12305A">A − B</text>
+</svg>

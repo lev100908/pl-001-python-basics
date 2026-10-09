@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" width="480" height="310"
+     font-family="'Segoe UI', Arial, sans-serif">
+  <title>Подмножество: A ⊂ B</title>
+  <rect width="480" height="310" fill="#FFFFFF"/>
+  <circle cx="240" cy="150" r="100" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
+  <circle cx="200" cy="150" r="55" fill="#9CC5EE" stroke="#000000" stroke-width="2.5"/>
+  <g font-size="22" font-weight="600" fill="#12305A">
+    <text x="200" y="118" text-anchor="middle" dominant-baseline="central">A</text>
+    <text x="240" y="72" text-anchor="middle" dominant-baseline="central">B</text>
+  </g>
+  <g font-size="20" fill="#12305A">
+    <text x="182" y="152" text-anchor="middle" dominant-baseline="central">1</text>
+    <text x="216" y="174" text-anchor="middle" dominant-baseline="central">2</text>
+    <text x="292" y="125" text-anchor="middle" dominant-baseline="central">3</text>
+    <text x="297" y="180" text-anchor="middle" dominant-baseline="central">4</text>
+  </g>
+  <text x="240" y="285" text-anchor="middle" font-size="22" font-weight="600" fill="#12305A">A ⊂ B</text>
+</svg>
