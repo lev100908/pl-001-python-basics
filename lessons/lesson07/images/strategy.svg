@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540"
+     font-family="'Segoe UI', Arial, sans-serif">
+  <title>Паттерн Стратегия: классическая структура на классах</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M1 1 L11 6 L1 11" fill="none" stroke="#12305A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="125%" height="135%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#12305A" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="540" fill="#FFFFFF"/>
+
+  <!-- Context -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="40" width="240" height="130" rx="10" fill="#EAF3FC" stroke="#12305A" stroke-width="2"/>
+    <path d="M30 50 a10 10 0 0 1 10 -10 h220 a10 10 0 0 1 10 10 v36 h-240 z" fill="#12305A"/>
+  </g>
+  <line x1="30" y1="86" x2="270" y2="86" stroke="#12305A" stroke-width="2"/>
+  <text x="150" y="70" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">Context</text>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#12305A">
+    <text x="48" y="116">strategy</text>
+    <text x="48" y="146">execute_strategy()</text>
+  </g>
+
+  <!-- AbstractStrategy -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="40" width="300" height="130" rx="10" fill="#EAF3FC" stroke="#0070C0" stroke-width="2"/>
+    <path d="M360 50 a10 10 0 0 1 10 -10 h280 a10 10 0 0 1 10 10 v46 h-300 z" fill="#9CC5EE"/>
+  </g>
+  <line x1="360" y1="96" x2="660" y2="96" stroke="#0070C0" stroke-width="2"/>
+  <text x="510" y="62" text-anchor="middle" font-size="14" font-style="italic" fill="#12305A">интерфейс</text>
+  <text x="510" y="86" text-anchor="middle" font-size="22" font-weight="700" fill="#12305A">AbstractStrategy</text>
+  <text x="378" y="136" font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#12305A">execute(data)</text>
+
+  <!-- Context uses strategy -->
+  <line x1="272" y1="105" x2="358" y2="105" stroke="#12305A" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="315" y="92" text-anchor="middle" font-size="14" fill="#12305A">использует</text>
+
+  <!-- Inheritance connectors -->
+  <line x1="510" y1="194" x2="510" y2="260" stroke="#12305A" stroke-width="2"/>
+  <line x1="210" y1="260" x2="810" y2="260" stroke="#12305A" stroke-width="2"/>
+  <line x1="210" y1="260" x2="210" y2="338" stroke="#12305A" stroke-width="2"/>
+  <line x1="510" y1="260" x2="510" y2="338" stroke="#12305A" stroke-width="2"/>
+  <line x1="810" y1="260" x2="810" y2="338" stroke="#12305A" stroke-width="2"/>
+  <polygon points="510,172 497,196 523,196" fill="#FFFFFF" stroke="#12305A" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Concrete strategies -->
+  <g filter="url(#shadow)">
+    <rect x="90" y="340" width="240" height="120" rx="10" fill="#EAF3FC" stroke="#0070C0" stroke-width="2"/>
+    <path d="M90 350 a10 10 0 0 1 10 -10 h220 a10 10 0 0 1 10 10 v46 h-240 z" fill="#0070C0"/>
+    <rect x="390" y="340" width="240" height="120" rx="10" fill="#EAF3FC" stroke="#0070C0" stroke-width="2"/>
+    <path d="M390 350 a10 10 0 0 1 10 -10 h220 a10 10 0 0 1 10 10 v46 h-240 z" fill="#0070C0"/>
+    <rect x="690" y="340" width="240" height="120" rx="10" fill="#EAF3FC" stroke="#0070C0" stroke-width="2"/>
+    <path d="M690 350 a10 10 0 0 1 10 -10 h220 a10 10 0 0 1 10 10 v46 h-240 z" fill="#0070C0"/>
+  </g>
+  <g stroke="#0070C0" stroke-width="2">
+    <line x1="90" y1="386" x2="330" y2="386"/>
+    <line x1="390" y1="386" x2="630" y2="386"/>
+    <line x1="690" y1="386" x2="930" y2="386"/>
+  </g>
+  <g text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">
+    <text x="210" y="369">ConcreteStrategyA</text>
+    <text x="510" y="369">ConcreteStrategyB</text>
+    <text x="810" y="369">ConcreteStrategyC</text>
+  </g>
+  <g text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#12305A">
+    <text x="210" y="416">execute(data)</text>
+    <text x="510" y="416">execute(data)</text>
+    <text x="810" y="416">execute(data)</text>
+  </g>
+  <g text-anchor="middle" font-size="14" fill="#12305A">
+    <text x="210" y="442">алгоритм 1</text>
+    <text x="510" y="442">алгоритм 2</text>
+    <text x="810" y="442">алгоритм 3</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-size="15" fill="#12305A">
+    <line x1="30" y1="505" x2="68" y2="505" stroke="#12305A" stroke-width="2"/>
+    <polygon points="80,505 68,499 68,511" fill="#FFFFFF" stroke="#12305A" stroke-width="2" stroke-linejoin="round"/>
+    <text x="92" y="510">наследование (реализация интерфейса)</text>
+    <line x1="420" y1="505" x2="470" y2="505" stroke="#12305A" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="486" y="510">использование</text>
+  </g>
+</svg>

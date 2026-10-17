@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 580" width="1020" height="580"
+     font-family="'Segoe UI', Arial, sans-serif">
+  <title>Паттерн Стратегия на функциях: выбор лучшей скидки для заказа</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M1 1 L11 6 L1 11" fill="none" stroke="#12305A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="125%" height="135%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#12305A" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="1020" height="580" fill="#FFFFFF"/>
+
+  <!-- Column captions -->
+  <g text-anchor="middle" font-size="16" font-weight="600" fill="#0070C0">
+    <text x="140" y="34">контекст</text>
+    <text x="550" y="34">стратегии: обычные функции</text>
+    <text x="900" y="34">выбор</text>
+  </g>
+  <!-- Order (context) -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="190" width="220" height="220" rx="10" fill="#EAF3FC" stroke="#12305A" stroke-width="2"/>
+    <path d="M30 200 a10 10 0 0 1 10 -10 h200 a10 10 0 0 1 10 10 v36 h-220 z" fill="#12305A"/>
+  </g>
+  <text x="140" y="223" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">order</text>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="16" fill="#12305A">
+    <text x="46" y="268">"customer": {…}</text>
+    <text x="46" y="298">"items": [</text>
+    <text x="62" y="324">{…}, {…}, …</text>
+    <text x="46" y="350">]</text>
+  </g>
+  <text x="140" y="388" text-anchor="middle" font-size="14" fill="#12305A">словарь с данными заказа</text>
+
+  <!-- Strategy functions -->
+  <g filter="url(#shadow)">
+    <rect x="330" y="70" width="440" height="100" rx="10" fill="#EAF3FC" stroke="#0070C0" stroke-width="2"/>
+    <rect x="330" y="250" width="440" height="100" rx="10" fill="#EAF3FC" stroke="#0070C0" stroke-width="2"/>
+    <rect x="330" y="430" width="440" height="100" rx="10" fill="#EAF3FC" stroke="#0070C0" stroke-width="2"/>
+  </g>
+  <g fill="#0070C0">
+    <rect x="330" y="70" width="10" height="100" rx="3"/>
+    <rect x="330" y="250" width="10" height="100" rx="3"/>
+    <rect x="330" y="430" width="10" height="100" rx="3"/>
+  </g>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="19" font-weight="700" fill="#12305A">
+    <text x="360" y="108">get_loyalty_discount(order)</text>
+    <text x="360" y="288">get_item_amount_discount(order)</text>
+    <text x="360" y="468">get_general_amount_discount(order)</text>
+  </g>
+  <g font-size="16" fill="#12305A">
+    <text x="360" y="140">5% от суммы заказа при 1000+ баллах лояльности</text>
+    <text x="360" y="320">10% от стоимости позиции при 20+ единицах</text>
+    <text x="360" y="500">7% от суммы заказа при 10+ разных позициях</text>
+  </g>
+
+  <!-- Order -> functions -->
+  <g fill="none" stroke="#12305A" stroke-width="2" stroke-linecap="round">
+    <path d="M252 270 C 295 270, 295 120, 326 120" marker-end="url(#arrow)"/>
+    <path d="M252 300 L 326 300" marker-end="url(#arrow)"/>
+    <path d="M252 330 C 295 330, 295 480, 326 480" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Functions -> selector -->
+  <g fill="none" stroke="#12305A" stroke-width="2" stroke-linecap="round">
+    <path d="M772 120 C 800 120, 800 266, 836 266" marker-end="url(#arrow)"/>
+    <path d="M772 300 L 836 300" marker-end="url(#arrow)"/>
+    <path d="M772 480 C 800 480, 800 334, 836 334" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Selector -->
+  <g filter="url(#shadow)">
+    <rect x="840" y="240" width="160" height="120" rx="10" fill="#0070C0"/>
+  </g>
+  <text x="920" y="288" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="24" font-weight="700" fill="#FFFFFF">max</text>
+  <text x="920" y="316" text-anchor="middle" font-size="14" fill="#FFFFFF">лучшая скидка</text>
+  <text x="920" y="336" text-anchor="middle" font-size="14" fill="#FFFFFF">для покупателя</text>
+
+  <!-- Selector -> result -->
+  <line x1="920" y1="362" x2="920" y2="426" stroke="#12305A" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- Result -->
+  <g filter="url(#shadow)">
+    <rect x="840" y="430" width="160" height="100" rx="10" fill="#EAF3FC" stroke="#12305A" stroke-width="2"/>
+  </g>
+  <text x="920" y="470" text-anchor="middle" font-size="18" font-weight="700" fill="#12305A">итоговая цена</text>
+  <text x="920" y="496" text-anchor="middle" font-size="14" fill="#12305A">сумма заказа</text>
+  <text x="920" y="516" text-anchor="middle" font-size="14" fill="#12305A">минус скидка</text>
+</svg>
